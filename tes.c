@@ -1,31 +1,30 @@
 #include <stdio.h>
 
-int main() {
-    //variabel
+int main()
+{
+    int lagi = 0;
+    int nilai = 0;
     int kkm = 80;
-    int nilai;
 
-    printf("SELAMAT DATANG DI PROGRAM PENILAIAN MAHASISWA\n");
+    printf("Selamat datang di program penginputan nilai mahasiswa\n");
 
-    //looping
-   for (int i = 0; i < kkm; i++) {
-        printf("Masukkan nilai mata kuliah anda : ");
+    do
+    {
+        printf("Masukkan nilai mata kuliah: ");
         scanf("%d", &nilai);
-    }
-    //boolean
-    if (nilai > kkm) {
-        printf("Selamat anda lulus dari matkul ini!");
-    }
 
-    else if (nilai == kkm) {
-        printf("Selamat anda telah memenuhi nilai matkul ini!");
+        if (nilai >= kkm)
+        {
+            printf("Mahasiswa ini lulus mata kuliah!\n");
+        }
+        else
+        {
+            printf("Mahasiswa ini mengulang. Silahkan menginformasikan untuk remedial\n");
+        }
 
-    }
-
-    else (nilai < kkm); {
-        printf("Maaf anda tidak lulus dari matkul ini dan remedial");
-    }
+        printf("Isi ulang nilai mahasiswa? (1 untuk ya, selain 1 untuk tidak): ");
+        scanf("%d", &lagi);
+    } while (lagi == 1);
 
     return 0;
-
 }
